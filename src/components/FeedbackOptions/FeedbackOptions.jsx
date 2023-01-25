@@ -1,9 +1,17 @@
+import Section from '../Section';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const elementsGenerate = options => {
     let btnsArr = [];
+
     for (const key in options) {
       btnsArr.push(
-        <button key={key} type="submit" onClick={onLeaveFeedback}>
+        <button
+          key={key}
+          type="submit"
+          onClick={() => {
+            onLeaveFeedback(key);
+          }}
+        >
           {key}
         </button>
       );
@@ -11,6 +19,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return btnsArr;
   };
 
-  return <>{elementsGenerate(options)}</>;
+  return (
+    <Section title="Please leave feedback">{elementsGenerate(options)}</Section>
+  );
 };
 export default FeedbackOptions;

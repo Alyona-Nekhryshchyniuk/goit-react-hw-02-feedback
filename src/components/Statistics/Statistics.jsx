@@ -1,19 +1,24 @@
-const Statistics = ({ options, total }) => {
+import Section from '../Section';
+const Statistics = ({ options, total, positivePercentage }) => {
   const elementsGenerate = options => {
-    let arr = [];
+    let labelsMarkUp = [];
+
     for (const key in options) {
-      let capitalizedKey = key.capitalized(key);
-      arr.push(<p key={key}>{capitalizedKey}:</p>);
+      labelsMarkUp.push(
+        <p key={key}>
+          {key}: {options[key]}
+        </p>
+      );
     }
-    return arr;
+    return labelsMarkUp;
   };
 
   return (
-    <>
-      <h2>Statistics</h2>
-      <div>Total: {total}</div>
+    <Section title="Statistics">
       {elementsGenerate(options)}
-    </>
+      <p>Total: {total()}</p>
+      <p>Positive feedback: {positivePercentage()}%</p>
+    </Section>
   );
 };
 export default Statistics;
