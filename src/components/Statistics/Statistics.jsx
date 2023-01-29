@@ -1,3 +1,4 @@
+import PropTypes, { arrayOf } from 'prop-types';
 import Section from '../Section';
 const Statistics = ({ options, total, positivePercentage }) => {
   const elementsGenerate = options => {
@@ -20,5 +21,11 @@ const Statistics = ({ options, total, positivePercentage }) => {
       <p>Positive feedback: {positivePercentage()}%</p>
     </Section>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.object,
+  total: PropTypes.func,
+  positivePercentage: PropTypes.func,
 };
 export default Statistics;

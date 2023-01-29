@@ -1,3 +1,4 @@
+import PropTypes, { arrayOf } from 'prop-types';
 import Section from '../Section';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const elementsGenerate = options => {
@@ -23,4 +24,10 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <Section title="Please leave feedback">{elementsGenerate(options)}</Section>
   );
 };
+
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+  options: PropTypes.object,
+};
+
 export default FeedbackOptions;
