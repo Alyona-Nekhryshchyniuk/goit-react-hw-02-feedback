@@ -1,4 +1,5 @@
 import PropTypes, { arrayOf } from 'prop-types';
+import { Button } from './Button.styled';
 import Section from '../Section';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const elementsGenerate = options => {
@@ -6,7 +7,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
     for (const key in options) {
       btnsArr.push(
-        <button
+        <Button
           key={key}
           type="submit"
           onClick={() => {
@@ -14,7 +15,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           }}
         >
           {key}
-        </button>
+        </Button>
       );
     }
     return btnsArr;
