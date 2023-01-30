@@ -1,4 +1,4 @@
-import PropTypes, { arrayOf } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button } from './Button.styled';
 import Section from '../Section';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {

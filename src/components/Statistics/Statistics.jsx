@@ -1,4 +1,4 @@
-import PropTypes, { arrayOf } from 'prop-types';
+import PropTypes from 'prop-types';
 import Section from '../Section';
 const Statistics = ({ options, total, positivePercentage }) => {
   const elementsGenerate = options => {
