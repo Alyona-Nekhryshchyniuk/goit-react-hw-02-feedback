@@ -19,7 +19,6 @@ export class App extends Component {
       ...prevState,
       [feedbackName]: (prevState[feedbackName] += 1),
     }));
-    this.countPositiveFeedbackPercentage();
   };
 
   countPositiveFeedbackPercentage = () => {
